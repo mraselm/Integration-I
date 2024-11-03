@@ -3,7 +3,7 @@ library(DBI)
 library(tidyverse)
 library(httr2)
 library(lubridate)
-## Investigate which symbols we can search for ---------------
+# Investigate which symbols we can search for ---------------
 req <- request("https://alpha-vantage.p.rapidapi.com") %>%
   req_url_path("query") %>%
   req_url_query("keywords" = "Apple",
@@ -20,7 +20,7 @@ symbols <- resp %>%
 symbols$bestMatches[[1]]
 symbols$bestMatches[[2]]
 
-## Extract and Transform  ------------------------------------------
+# Extract and Transform  ------------------------------------------
 # Extract data from Alpha Vantage
 req <- request("https://alpha-vantage.p.rapidapi.com") %>%
   req_url_path("query") %>%
